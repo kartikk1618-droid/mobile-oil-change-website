@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply font-sans bg-white text-navy-700 antialiased;
+  }
+  ::selection {
+    @apply bg-orange-500 text-white;
+  }
+}
+
+@layer components {
+  .container-px {
+    @apply mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-10;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold tracking-wide transition-all duration-300 focus:outline-none focus-visible:ring-4 focus-visible:ring-orange-300/60;
+  }
+  .btn-primary {
+    @apply btn bg-orange-500 text-white shadow-glow hover:bg-orange-600 hover:-translate-y-0.5 active:translate-y-0;
+  }
+  .btn-secondary {
+    @apply btn bg-white text-navy-700 ring-1 ring-navy-200 hover:bg-navy-50 hover:-translate-y-0.5;
+  }
+  .btn-ghost {
+    @apply btn text-navy-700 hover:bg-navy-50;
+  }
+  .card {
+    @apply rounded-3xl bg-white shadow-card ring-1 ring-navy-100/60 transition-all duration-300;
+  }
+  .section-eyebrow {
+    @apply inline-flex items-center gap-2 rounded-full bg-orange-50 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-orange-600;
+  }
+  .input-field {
+    @apply w-full rounded-2xl border-0 bg-navy-50/60 px-4 py-3.5 text-sm text-navy-700 placeholder:text-navy-300 ring-1 ring-inset ring-navy-200 transition focus:bg-white focus:ring-2 focus:ring-orange-400 focus:outline-none;
+  }
+  .label-field {
+    @apply mb-1.5 block text-sm font-medium text-navy-600;
+  }
+}
+
+/* Reveal-on-scroll */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+  will-change: opacity, transform;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hide scrollbar for carousel */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
